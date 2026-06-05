@@ -5,7 +5,7 @@
 // Epic messy code Baby !!
 // Epic messy code Baby !!
 
-var nuts = 10000000000000000;
+var nuts = 1000000;
 var maxNuts = 0;
 var nutKids = 0;
 var nutBoys = 0;
@@ -209,7 +209,7 @@ function kFormatter(num) {
 		return num;
 	} else if (num >= 1000000 && num < 1000000000){
 		num = num/1000000;
-		return round(num) + "m";
+		return round(num) + "martikillion";
 	} else if (num >= 1000000000 && num < 1000000000000){
 		num = num/1000000000;
 		return round(num) + "b";
@@ -225,6 +225,14 @@ function kFormatter(num) {
 	}else if (num >= 1000000000000000000000){
 		num = num/1000000000000000000000;
 		return round(num) + " sextillion";
+	}
+	else if (num >= 1000000000000000000000000){
+		num = num/1000000000000000000000000;
+		return round(num) + " septillion";
+	}
+	else if (num >= 1000000000000000000000000000){
+		num = num/1000000000000000000000000;
+		return round(num) + " octillion";
 	}
 }
 

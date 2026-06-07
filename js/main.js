@@ -87,7 +87,7 @@ var nutTimeTravelDamage = 10000000;
 var nutUniversalDominationDamage = 65000000;
 var nutGodDamage = 430000000;
 var nutAfterlifeDamage = 2900000000;
-var nutAfterlifeDamage = 20000000000;
+var nutDimentionDamage = 20000000000;
 var totalDamage = 0;
 
 var buyAudio = new Audio('audio/buy.wav');
@@ -1638,7 +1638,7 @@ function CheckAmounts(){
 			classes[i].style.display = '';
 		}
     }
-	if(nuts >= 22000000000000000 || nutAfterlives >= 1) {
+	if(nuts >= 22000000000000000 || buyNutDimention >= 1) {
 		var classes = document.getElementsByClassName('buyNutAfterlife');
 		for (var i=0;i<classes.length;i++) {
 			classes[i].style.display = '';
@@ -1741,7 +1741,7 @@ function UpdateCosts(){
 	nutUniversalDominationCostNext = Math.floor(40000000000000 * Math.pow(1.1,nutUniversalDominations));
 	nutGodCostNext = Math.floor(170000000000000 * Math.pow(1.1,nutGods));
 	nutAfterlifeCostNext = Math.floor(2000000000000000 * Math.pow(1.1,nutAfterlives));
-	nutDimentionCostNext = Math.floor(3700000000000000000 * Math.pow(1.1,nutDimentionlives));
+	nutDimentionCostNext = Math.floor(3700000000000000000 * Math.pow(1.1, nutDimention));
 	document.getElementById('nutKidCost').innerHTML = kFormatter(nutKidCostNext);
 	document.getElementById('nutBoyCost').innerHTML = kFormatter(nutBoyCostNext);
 	document.getElementById('nutBoyBonusCost').innerHTML = kFormatter(nutBoyBonusCostNext);

@@ -2,27 +2,27 @@ body {
 	background-repeat: repeat;
 	background-size: cover;
 	background-position: center;
-    overflow:hidden;
-	z-index:-3;
+	overflow: auto;          /* changed from hidden to allow scrolling */
+	z-index: -3;
 }
 
 #container {
 	margin-left: auto;
 	margin-right: auto;
 	line-height: 1.8;
-    box-shadow: 2px 2px 5px #888888;
+	box-shadow: 2px 2px 5px #888888;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.1vw;
-	display: absolute;
+	display: block;          /* changed from absolute */
 	width: 90%;
 	height: 95%;
 	background-color: rgba(255,255,255,0.8);
 	padding: 20px 25px 20px 25px;
-	z-index:-2;
+	z-index: -2;
 }
 
 main {
-    -webkit-animation: fadein 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+	-webkit-animation: fadein 2s cubic-bezier(0.215, 0.61, 0.355, 1);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -64,38 +64,38 @@ main {
 	text-shadow: 2px 2px 10px #000000;
 }
 
-#middle{
+#middle {
 	text-align: center;
 	margin-top: 30px;
 	top: 80%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    position: absolute;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	position: absolute;
 	width: 70%;
 }
 
+/* Parent div for the nut and its counter - now has position relative (set in HTML) */
+div[onmousedown="return false"] {
+	position: relative;
+}
+
 #middleNutContent {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-
-	div[onmousedown="return false"] {
-    position: relative;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
 }
-}
-
 
 #middleNut {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 13vw;
 	height: 13vw;
-    -webkit-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 	cursor: pointer;
 	transition: 0.3s;
 	z-index: 99;
@@ -107,9 +107,9 @@ main {
 
 #middleNutCounter {
 	pointer-events: none;
-    position: relative;
+	position: relative;
 	bottom: 7vw;
-	text-align:center;
+	text-align: center;
 	font-size: 2vw;
 	font-weight: bold;
 }
@@ -117,15 +117,15 @@ main {
 #amountAdded {
 	pointer-events: none;
 	text-align: center;
-    position: absolute;
-    margin: auto;
-    top: 0.9vw;
-    left: 17vw;
-    right: 0;
+	position: absolute;
+	margin: auto;
+	top: 0.9vw;
+	left: 17vw;
+	right: 0;
 	bottom: 2vw;
 	font-size: 2vw;
 	-webkit-animation-duration: 0.6s;
-    -webkit-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 	opacity: 0;
 }
 
@@ -137,7 +137,7 @@ main {
 	right: 10vw;
 	font-family: 'Oswald', sans-serif;
 	font-size: 1.5vw;
-  -webkit-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 	opacity: 0;
 }
 
@@ -153,7 +153,7 @@ main {
 	height: 7.7%;
 	border-radius: 1.1vw;
 	box-shadow: 2px 2px 5px #888888;
-	z-index:2;
+	z-index: 2;
 }
 
 #bonusdamage {
@@ -171,7 +171,7 @@ main {
 	border-radius: 1.1vw;
 	box-shadow: 2px 2px 5px #888888;
 	transition: 0.5s;
-	z-index:1;
+	z-index: 1;
 }
 
 #level {
@@ -186,7 +186,7 @@ main {
 	height: 9.2%;
 	border-radius: 1.1vw;
 	box-shadow: 2px 2px 5px #888888;
-	z-index:3;
+	z-index: 3;
 }
 
 #bgbar {
@@ -199,8 +199,8 @@ main {
 	text-align: center;
 	height: 3.5%;
 	border-radius: 20px;
-  box-shadow: 2px 2px 5px #888888;
-	z-index:3;
+	box-shadow: 2px 2px 5px #888888;
+	z-index: 3;
 }
 
 #bar {
@@ -219,7 +219,7 @@ main {
 	position: absolute;
 	left: 6.5vw;
 	top: 66%;
-  transition: 0.5s;
+	transition: 0.5s;
 	width: 20vw;
 	height: 50px;
 }
@@ -240,103 +240,106 @@ main {
 	width: 25px;
 	height: 40px;
 	padding: 5px 15px 5px 15px;
-    background-color: #F64747;
+	background-color: #F64747;
 	border-radius: 0.5vw;
 	cursor: pointer;
-    font-size: 26.5px;
+	font-size: 26.5px;
 	font-weight: bold;
-    color: white;
+	color: white;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: clip;
 	transition: 0.5s;
-	z-index:1;
+	z-index: 1;
 }
 
 #customImage:focus + label,
 #customImage + label:hover {
-    background-color: #e23131;
+	background-color: #e23131;
 }
 
 #gambling {
 	line-height: 1.8;
-    box-shadow: 2px 2px 5px #888888;
+	box-shadow: 2px 2px 5px #888888;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.1vw;
 	top: 4.5vw;
 	left: 20vw;
-	padding: 0px 0px 0px 0px;
-
+	padding: 0px;
 	height: 0px;
 	width: 0px;
-
 	z-index: 999;
 	position: absolute;
 	background-color: rgba(255,255,255,0.95);
 	overflow: hidden;
-	white-space: nowrap;
+	white-space: normal;          /* changed from nowrap to allow wrapping */
 	transition: 0.5s;
 }
 
 #prestige {
 	float: right;
 	line-height: 1.8;
-    box-shadow: 2px 2px 5px #888888;
+	box-shadow: 2px 2px 5px #888888;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.1vw;
 	top: 4.5vw;
 	right: 20vw;
-	padding: 0px 0px 0px 0px;
-
+	padding: 0px;
 	height: 0px;
 	width: 0px;
-
 	z-index: 999;
 	position: absolute;
 	background-color: rgba(255,255,255,0.95);
 	overflow: hidden;
-	white-space: nowrap;
+	white-space: normal;          /* changed from nowrap to allow wrapping */
 	transition: 0.5s;
 }
 
 #prestigeGainDiv {
-		background-color: #E4F1FE;
-		background-color: rgba(255,255,255,0.5);
-		position: absolute;
-		text-align: left;
-		top: 2%;
-		right: 21%;
-		-webkit-transform: translate(-50%);
-		font-size: 0.8vw;
-		padding: 3px 11px;
-		width: 8vw;
-		height: 5vw;
-		border-radius: 1.1vw;
-		box-shadow: 2px 2px 5px #888888;
-		transition: 0.5s;
-		z-index:1;
+	background-color: #E4F1FE;
+	background-color: rgba(255,255,255,0.5);
+	position: absolute;
+	text-align: left;
+	top: 2%;
+	right: 21%;
+	-webkit-transform: translate(-50%);
+	font-size: 0.8vw;
+	padding: 3px 11px;
+	width: 8vw;
+	height: 5vw;
+	border-radius: 1.1vw;
+	box-shadow: 2px 2px 5px #888888;
+	transition: 0.5s;
+	z-index: 1;
 }
 
 .item1 {
 	float: left;
 	text-align: left;
-    box-shadow: 0px 0px 5px #888888;
+	box-shadow: 0px 0px 5px #888888;
 	background-color: rgba(0, 0, 0, 0.05);
-    position:fixed;
-    top:3.5%;
-    transition: 0.5s;
+	position: fixed;
+	top: 3.5%;
+	transition: 0.5s;
 	font-size: 0.9vw;
 }
 
 .item2 {
 	text-align: right;
-    box-shadow: 0px 0px 5px #888888;
+	box-shadow: 0px 0px 5px #888888;
 	background-color: rgba(0, 0, 0, 0.05);
-    position:fixed;
-	right:5.5%;
-    top:3.5%;
-    transition: 0.5s;
+	position: fixed;
+	right: 5.5%;
+	top: 3.5%;
+	transition: 0.5s;
 	font-size: 0.9vw;
+}
+
+/* missing .textContainer style */
+.textContainer {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
 }
 
 #button {
@@ -359,15 +362,15 @@ button {
 }
 
 button:hover {
-    -webkit-filter: brightness(90%);
-    -moz-filter: brightness(90%);
-    -filter: brightness(90%);
+	-webkit-filter: brightness(90%);
+	-moz-filter: brightness(90%);
+	filter: brightness(90%);
 }
 
 button:active {
-    -webkit-filter: brightness(80%);
-    -moz-filter: brightness(80%);
-    -filter: brightness(80%);
+	-webkit-filter: brightness(80%);
+	-moz-filter: brightness(80%);
+	filter: brightness(80%);
 	box-shadow: 0 3px #666;
 	transform: translateY(2px);
 	transition: 0.05s;
@@ -377,6 +380,7 @@ button:active {
 	box-shadow: 0px 0px 50px 0.4vw #a30e0e;
 }
 
+/* Style for the Nut Dimention button (same as redglow) */
 .buyDimention:hover {
 	box-shadow: 0px 0px 50px 0.4vw #a30e0e;
 }
@@ -402,7 +406,7 @@ button:active {
 @-webkit-keyframes grow2Start {
 	0% {
 		-webkit-transform: scale(1.0) translate(0px, 0px);
-        opacity: 0;
+		opacity: 0;
 	}
 	100% {
 		opacity: 1;
@@ -413,7 +417,7 @@ button:active {
 @-webkit-keyframes grow2 {
 	0% {
 		-webkit-transform: scale(0.8) translate(-1.5vw, 0px);
-        opacity: 1;
+		opacity: 1;
 	}
 	100% {
 		-webkit-transform: scale(1.0) translate(0px, 0px);
@@ -431,11 +435,21 @@ button:active {
 }
 
 @-webkit-keyframes grow3 {
-	0% {-webkit-transform: scale(0.95) translate(0px, 0.3vw);}100% {-webkit-transform: scale(1.0) translate(0px, 0px);}
+	0% {
+		-webkit-transform: scale(0.95) translate(0px, 0.3vw);
+	}
+	100% {
+		-webkit-transform: scale(1.0) translate(0px, 0px);
+	}
 }
 
 @-webkit-keyframes zoomIn {
-	0% {-webkit-transform: scale(0);}100% {-webkit-transform: scale(1.0)}
+	0% {
+		-webkit-transform: scale(0);
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+	}
 }
 
 @-webkit-keyframes jump {
@@ -450,11 +464,11 @@ button:active {
 }
 
 @-webkit-keyframes fadein {
-    from {
-	opacity: 0;
+	from {
+		opacity: 0;
 	}
-    to   {
-	opacity: 1;
+	to {
+		opacity: 1;
 	}
 }
 

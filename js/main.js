@@ -6,30 +6,36 @@
 // Epic messy code Baby !!
 // Epic messy code Baby !!
 
-var nuts = 1000000000000000000;
-var maxNuts = 0;
-var nutKids = 0;
-var nutBoys = 0;
-var nutBoyBonuses = 0;
-var nutMen = 0;
-var nutFarms = 0;
-var nutFactories = 0;
-var nutBanks = 0;
-var nutEmpires = 0;
-var nutWorldControls = 0;
-var nutGalacticReigns = 0;
-var deezNutGuys = 0;
-var nutTimeTravels = 0;
-var nutUniversalDominations = 0;
-var nutGods = 0;
-var nutAfterlives = 0;
-var nutDimention = 0;
-var nutDimentionDamage = 20000000000;
-var clickDamage = 1;
-var clickUpgrades = 0;
-var clickUpgrades2 = 0;
-var clickUpgrades3 = 0;
-var allUpgrades = 0;
+// Default values (used only if no save exists)
+function setDefaultValues() {
+    nuts = 100000000000;
+    maxNuts = 0;
+    nutKids = 0;
+    nutBoys = 0;
+    nutBoyBonuses = 0;
+    nutMen = 0;
+    nutFarms = 0;
+    nutFactories = 0;
+    nutBanks = 0;
+    nutEmpires = 0;
+    nutWorldControls = 0;
+    nutGalacticReigns = 0;
+    deezNutGuys = 0;
+    nutTimeTravels = 0;
+    nutUniversalDominations = 0;
+    nutGods = 0;
+    nutAfterlives = 0;
+    nutDimention = 0;
+    nutDimentionDamage = 20000000000;
+    clickDamage = 1;
+    clickUpgrades = 0;
+    clickUpgrades2 = 0;
+    clickUpgrades3 = 0;
+    allUpgrades = 0;
+    // ... continue with all other variables
+	// list all
+
+// Then at the end, after Load, if no save exists, set defaults
 var h = 0;
 var m = 0;
 var s = 0;
@@ -105,6 +111,34 @@ var clickUpgradeShown = false;
 var click2UpgradeShown = false;
 var click3UpgradeShown = false;
 var allUpgradeShown = false;
+
+}
+
+// Declare variables with var (hoisted)
+// Declare variables first (no assignments)
+var nuts, maxNuts, nutKids, nutBoys, nutBoyBonuses, nutMen, nutFarms, nutFactories, nutBanks, nutEmpires, nutWorldControls, nutGalacticReigns, deezNutGuys, nutTimeTravels, nutUniversalDominations, nutGods, nutAfterlives, nutDimention, nutDimentionDamage, clickDamage, clickUpgrades, clickUpgrades2, clickUpgrades3, allUpgrades, h, m, s, pressed, deleted, landscape, level, xp, barAmount, levelAmount, levelMultiplier, bgNum, ranInvert, prestigeGain, url, page, nutKidCostNext, nutBoyCostNext, nutManCostNext, nutFarmCostNext, nutFactoryCostNext, nutBankCostNext, nutEmpireCostNext, nutWorldControlCostNext, nutGalacticReignCostNext, deezNutGuyCostNext, nutTimeTravelCostNext, nutUniversalDominationCostNext, nutGodCostNext, nutAfterlifeCostNext, nutDimentionCostNext, nutBoyBonusCostNext, clickUpgradeCostNext, clickUpgrade2CostNext, allUpgradeCostNext, clickUpgrade3CostNext, nutKidDamage, nutBoyDamage, nutManDamage, nutFarmDamage, nutFactoryDamage, nutBankDamage, nutEmpireDamage, nutWorldControlDamage, nutGalacticReignDamage, deezNutGuyDamage, nutTimeTravelDamage, nutUniversalDominationDamage, nutGodDamage, nutAfterlifeDamage, totalDamage, buyAudio, cantBuyAudio, clickAudio, menuAudio, music, audioMuted, musicMuted, musicProgress, nutBoyUpgradeShown, clickUpgradeShown, click2UpgradeShown, click3UpgradeShown, allUpgradeShown;
+
+// Then define Load() (it will assign values)
+function Load() {
+    // ... your existing Load code
+    // If no save, assign defaults inside Load
+}
+
+// Call Load immediately
+Load();
+
+// Then proceed with the rest of your code (CheckBackground, etc.)
+
+// Immediately after all var declarations, before any other code runs
+(function() {
+    if (localStorage.getItem("save")) {
+        var saved = JSON.parse(localStorage.getItem("save"));
+        if (typeof saved.nuts !== "undefined") nuts = saved.nuts;
+        if (typeof saved.nutKids !== "undefined") nutKids = saved.nutKids;
+        // ... copy all the assignments from your Load() function
+        // This ensures defaults are replaced BEFORE any game logic runs
+    }
+})();
 
 // Do NOT start music here – will be started in Load()
 // music.play();

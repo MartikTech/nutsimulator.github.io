@@ -5,7 +5,7 @@
 // Epic messy code Baby !!
 // Epic messy code Baby !!
 
-var nuts = 100000000000000000;
+var nuts = 100000000000;
 var maxNuts = 0;
 var nutKids = 0;
 var nutBoys = 0;

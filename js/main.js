@@ -1,3 +1,4 @@
+<script>
 // Epic messy code Baby !!
 // Epic messy code Baby !!
 // Epic messy code Baby !!
@@ -105,8 +106,9 @@ var click2UpgradeShown = false;
 var click3UpgradeShown = false;
 var allUpgradeShown = false;
 
-music.play();
-music.loop=true;
+// Do NOT start music here – will be started in Load()
+// music.play();
+// music.loop = true;
 
 //
 CheckBackground();
@@ -1247,6 +1249,14 @@ function Load(){
 			document.getElementById('prestigeGainText').innerHTML = kFormatter(round(prestigeGain));
 	}
 
+	// Restore music state
+	music.currentTime = musicProgress;
+	music.muted = musicMuted;
+	music.loop = true;
+	if (!musicMuted) {
+		music.play().catch(e => console.log("Autoplay prevented: ", e));
+	}
+
 	Save();
 
   document.getElementById('time').innerHTML = "played for " + h + ":" + m + ":" + s;
@@ -1704,3 +1714,7 @@ function UpdateLevel(){
 function UpdateDamage(){
 	totalDamage = round((prestigeGain + levelMultiplier) * (nutKidDamage * nutKids + nutBoyDamage * nutBoys + nutManDamage * nutMen + nutFarmDamage * nutFarms + nutFactoryDamage * nutFactories + nutBankDamage * nutBanks + nutEmpireDamage * nutEmpires + nutWorldControlDamage * nutWorldControls + nutGalacticReignDamage * nutGalacticReigns + deezNutGuyDamage * deezNutGuys + nutTimeTravelDamage * nutTimeTravels + nutUniversalDominationDamage * nutUniversalDominations + nutGodDamage * nutGods + nutAfterlifeDamage * nutAfterlives + nutDimentionDamage * nutDimention));
 }
+
+// ***** FIX: Load saved data when the page is ready *****
+document.addEventListener('DOMContentLoaded', Load);
+</script>

@@ -1716,5 +1716,9 @@ function UpdateDamage(){
 }
 
 // ***** FIX: Load saved data when the page is ready *****
-document.addEventListener('DOMContentLoaded', Load);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', Load);
+} else {
+    Load();  // DOM is already ready, call immediately
+}
 </script>

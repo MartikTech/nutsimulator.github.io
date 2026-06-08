@@ -5,7 +5,7 @@
 // Epic messy code Baby !!
 // Epic messy code Baby !!
 
-var nuts = 100000000000000000;
+var nuts = 1;
 var maxNuts = 0;
 var nutKids = 0;
 var nutBoys = 0;
@@ -23,7 +23,7 @@ var nutUniversalDominations = 0;
 var nutGods = 0;
 var nutAfterlives = 0;
 var nutDimention = 0;                // <-- ADDED
-var nutDimentionDamage = 20000000000; // <-- ADDED
+var nutDimentionDamage = 2000000000000; // <-- ADDED
 var clickDamage = 1;
 var clickUpgrades = 0;
 var clickUpgrades2 = 0;
@@ -87,7 +87,7 @@ var deezNutGuyDamage = 1600000;
 var nutTimeTravelDamage = 10000000;
 var nutUniversalDominationDamage = 65000000;
 var nutGodDamage = 430000000;
-var nutAfterlifeDamage = 2900000000;
+var nutAfterlifeDamage = 290000000000;
 // nutDimentionDamage already defined above
 var totalDamage = 0;
 
@@ -229,6 +229,10 @@ function kFormatter(num) {
 	}else if (num >= 1000000000000000000000){
 		num = num/1000000000000000000000;
 		return round(num) + " sextillion";
+	}
+	else if (num >= 1000000000000000000000000){
+		num = num/1000000000000000000000000;
+		return round(num) + " septillion";
 	}
 }
 
@@ -722,7 +726,7 @@ function buy(building){
 
 		// <-- ADDED NUT DIMENTION CASE
 		case "nutDimention":
-			var nutDimentionCost = Math.floor(3700000000000000000 * Math.pow(1.1, nutDimention));
+			var nutDimentionCost = Math.floor(37000000000000000 * Math.pow(1.1, nutDimention));
 			if (nuts >= nutDimentionCost) {
 				nutDimention = nutDimention + 1;
 				nuts = nuts - nutDimentionCost;

@@ -80,7 +80,7 @@ div[onmousedown="return false"] {
 }
 
 #middleNutContent {
-	position: absolute;
+	position: relative;
 	left: 50%;
 	top: 50%;
 	-webkit-transform: translate(-50%, -50%);

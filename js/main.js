@@ -726,7 +726,7 @@ function buy(building){
 
 		// <-- ADDED NUT DIMENTION CASE
 		case "nutDimention":
-			var nutDimentionCost = Math.floor(37000000000000000 * Math.pow(1.1, nutDimention));
+			var nutDimentionCost = Math.floor(370000000000000000 * Math.pow(1.1, nutDimention));
 			if (nuts >= nutDimentionCost) {
 				nutDimention = nutDimention + 1;
 				nuts = nuts - nutDimentionCost;
@@ -1589,7 +1589,7 @@ function CheckAmounts(){
 		}
     }
 	// <-- ADDED DIMENSION BUTTON CONDITION
-	if(nuts >= 22000000000000000 || nutDimention >= 1) {
+	if(nuts >= 220000000000000 || nutDimention >= 1) {
 		var classes = document.getElementsByClassName('buyDimention');
 		for (var i = 0; i < classes.length; i++) {
 			classes[i].style.display = '';
